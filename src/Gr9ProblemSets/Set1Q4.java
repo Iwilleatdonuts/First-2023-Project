@@ -5,7 +5,7 @@ public class Set1Q4 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int[] numbers = {1, 2, 3};
+        int[] numbers = {1, 2, 3, 54, 43, 5};
         boolean hasNum1 = false;
         boolean hasNum2 = false;
     
