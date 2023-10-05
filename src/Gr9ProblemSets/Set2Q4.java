@@ -7,24 +7,28 @@ public class Set2Q4 {
     public static void main(String[] args) {
         
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Integer> primeNumbers = new ArrayList<Integer>();
-        primeNumbers.add(1);
+        ArrayList<Integer> primeNumbers = new ArrayList<>();
 
-        System.out.println("Print any integer below.");
-        int num = scanner.nextInt();
-    
-        for (int testNum = 1; testNum<num;testNum++){
+        System.out.println("Type in a number below");
+        int number = scanner.nextInt();
+
+        for (int i = 1; i<number;i++){
+            int test = 1;
             int factors = 0;
-            int denominator = 1;
-            while(denominator<=primeNumbers.get(primeNumbers.size()-1)){
-                if(testNum%primeNumbers.get(denominator-1) == 0){
+
+            while (test<=i){
+                if (i%test == 0){
                     factors++;
                 }
-                denominator++;
+                test++;
+                if(factors>2){
+                    break;
+                }
             }
-            if (factors == 1){
-                System.out.print(testNum + " ");
-                primeNumbers.add(testNum);
+
+            if (factors == 2){
+                primeNumbers.add(i);
+                System.out.print(primeNumbers.get(primeNumbers.size()-1) + " ");
             }
         }
         scanner.close();
